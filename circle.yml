@@ -17,4 +17,4 @@ dependencies:
 
 test:
   post:
-    - bash <(curl -s https://codecov.io/bash)
+    - npm run coverage && bash <(curl -s https://codecov.io/bash)
