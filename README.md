@@ -5,6 +5,16 @@
 
 A simple server-side url router using Deterministic Finite Automaton.
 
+## Installation
+
+This is published at npm registry: [dfa-router](https://www.npmjs.com/package/dfa-router).
+
+You can install it via `npm`, `yarn` or what you like.
+
+```
+npm install dfa-router
+```
+
 ## How to Use
 
 It behaves like a simple key-value map.
