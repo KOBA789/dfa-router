@@ -1,0 +1,26 @@
+{
+  "name": "dfa-router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc --reporter=lcov --extension .ts mocha"
+  },
+  "keywords": [],
+  "author": "KOBA789 <kobahide789@gmail.com> (https://koba789.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mocha": "^2.2.32",
+    "@types/node": "^6.0.46",
+    "babel-preset-power-assert": "^1.0.0",
+    "babel-register": "^6.18.0",
+    "coveralls": "^2.11.14",
+    "mocha": "^3.1.2",
+    "nyc": "^8.3.2",
+    "power-assert": "^1.4.1",
+    "ts-node": "^1.6.1",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.6"
+  }
+}
