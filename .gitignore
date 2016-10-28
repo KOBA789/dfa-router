@@ -2,3 +2,5 @@
 /coverage/
 /.vscode/
 /.nyc_output/
+/*.js
+/test/**/*.js
