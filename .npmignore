@@ -2,6 +2,8 @@
 /coverage/
 /.vscode/
 /.nyc_output/
-/*.js
-/test/**/*.js
+/test/
+circle.yml
+.babelrc
+.gitignore
 /coverage.lcov

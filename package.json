@@ -1,10 +1,11 @@
 {
   "name": "dfa-router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "nyc --extension .ts mocha",
+    "build": "tsc -p .",
     "coverage": "nyc report --reporter=lcov  > coverage.lcov"
   },
   "keywords": [],
