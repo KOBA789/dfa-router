@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "coverage": "nyc report --reporter=lcov --extension .ts mocha > coverage.lcov"
+    "test": "nyc --extension .ts mocha",
+    "coverage": "nyc report --reporter=lcov  > coverage.lcov"
   },
   "keywords": [],
   "author": "KOBA789 <kobahide789@gmail.com> (https://koba789.com)",
