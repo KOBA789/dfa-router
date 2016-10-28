@@ -9,7 +9,7 @@ A simple server-side url router using Deterministic Finite Automaton.
 
 It behaves like a simple key-value map.
 
-```
+```js
 const router = new Router();
 router.add('GET', '/foo', 'foo');
 router.add('GET', '/bar', 'bar');
@@ -30,7 +30,7 @@ assert.deepEqual(bar, {
 
 And also, it can capture parameters.
 
-```
+```js
 const router = new Router();
 router.add('GET', '/:param', 'foo');
 
