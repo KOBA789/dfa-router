@@ -7,3 +7,4 @@ circle.yml
 .babelrc
 .gitignore
 /coverage.lcov
+/examples/
