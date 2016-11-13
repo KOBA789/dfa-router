@@ -28,13 +28,13 @@ const foo = router.route('GET', '/foo');
 assert.deepEqual(foo, {
   type: 'found',
   value: 'foo',
-  params: {},
+  params: new Map([]),
 });
 const bar = router.route('GET', '/bar');
 assert.deepEqual(bar, {
   type: 'found',
   value: 'bar',
-  params: {},
+  params: new Map([]),
 });
 ```
 
@@ -48,7 +48,9 @@ const foo = router.route('GET', '/value');
 assert.deepEqual(foo, {
   type: 'found',
   value: 'foo',
-  params: { param: 'value' },
+  params: new Map([
+    ['param', 'value']
+  ]),,
 });
 ```
 
