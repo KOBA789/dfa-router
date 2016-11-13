@@ -11,7 +11,7 @@ describe('DFATable', () => {
       table.get(['foo']),
       {
         value: 'hoge',
-        params: {}
+        params: new Map([]),
       }
     );
   });
@@ -27,14 +27,14 @@ describe('DFATable', () => {
         table.get(['foo']),
         {
           value: 'hoge',
-          params: {},
+          params: new Map([]),
         }
       );
       assert.deepEqual(
         table.get(['bar']),
         {
           value: 'huga',
-          params: {},
+          params: new Map([]),
         }
       );
     });
@@ -44,7 +44,9 @@ describe('DFATable', () => {
         table.get(['not_foo']),
         {
           value: 'piyo',
-          params: { boo: 'not_foo' }
+          params: new Map([
+            ['boo', 'not_foo']
+          ]),
         }
       );
     });
@@ -60,14 +62,18 @@ describe('DFATable', () => {
         table.get(['yo', 'foo']),
         {
           value: 'hoge',
-          params: { boo: 'yo' }
+          params: new Map([
+            ['boo', 'yo']
+          ]),
         }
       );
       assert.deepEqual(
         table.get(['yo', 'bar']),
         {
           value: 'huga',
-          params: { hey: 'yo' }
+          params: new Map([
+            ['hey', 'yo']
+          ]),
         }
       );
     });

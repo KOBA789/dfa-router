@@ -35,7 +35,7 @@ describe('Router', () => {
         {
           type: 'found',
           value: 'ok1',
-          params: {},
+          params: new Map([]),
         }
       );
       assert.deepEqual(
@@ -43,7 +43,7 @@ describe('Router', () => {
         {
           type: 'found',
           value: 'ok2',
-          params: {},
+          params: new Map([]),
         }
       );
       assert.deepEqual(
@@ -51,7 +51,9 @@ describe('Router', () => {
         {
           type: 'found',
           value: 'ok3',
-          params: { hey: 'baz' },
+          params: new Map([
+            ['hey', 'baz']
+          ]),
         }
       );
       assert.deepEqual(
@@ -59,7 +61,9 @@ describe('Router', () => {
         {
           type: 'found',
           value: 'ok4',
-          params: { yo: 'hoge' },
+          params: new Map([
+            ['yo', 'hoge']
+          ]),
         }
       );
       assert.deepEqual(
@@ -67,7 +71,7 @@ describe('Router', () => {
         {
           type: 'found',
           value: 'ok5',
-          params: {},
+          params: new Map([]),
         }
       );
       assert.deepEqual(
@@ -75,7 +79,10 @@ describe('Router', () => {
         {
           type: 'found',
           value: 'ok6',
-          params: { boo: 'bar', yo: 'foo' },
+          params: new Map([
+            ['boo', 'bar'],
+            ['yo', 'foo']
+          ]),
         }
       );
       assert.deepEqual(

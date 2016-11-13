@@ -9,9 +9,7 @@ interface TableAcceptance<T> {
   captures: Captures;
 }
 
-interface Parameters {
-  [name: string]: string;
-}
+type Parameters = Map<string, string>;
 
 export interface TableResult<T> {
   value: T;
@@ -99,9 +97,9 @@ export default class DFATable<T> {
       return undefined;
     }
     const { value, captures } = currentElement.acceptance;
-    const params: Parameters = {};
+    const params: Parameters = new Map<string, string>();
     for (const key of Object.keys(captures)) {
-      params[key] = query[captures[key]];
+      params.set(key, query[captures[key]]);
     }
 
     return { value, params };
