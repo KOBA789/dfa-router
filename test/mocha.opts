@@ -1,1 +1,1 @@
---compilers ts:ts-node/register,babel-register
+--compilers ts:ts-node/register,@babel/register

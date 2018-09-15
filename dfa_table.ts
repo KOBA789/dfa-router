@@ -21,8 +21,10 @@ interface TableElement<T> {
   acceptance?: TableAcceptance<T>;
 }
 
+const ANY = Symbol('ANY');
 interface Table<T> {
   [name: string]: TableElement<T>;
+  [ANY]?: TableElement<T>;
 }
 
 interface NamedCapture {
@@ -31,7 +33,6 @@ interface NamedCapture {
 
 type UpsertHandler<T> = (old: T | undefined) => T;
 
-const ANY = Symbol('ANY');
 export default class DFATable<T> {
   private root: TableElement<T> = {
     acceptance: undefined,
@@ -47,7 +48,7 @@ export default class DFATable<T> {
       return;
     }
 
-    const name = path.shift() as (string | symbol);
+    const name = path.shift() as (string | typeof ANY);
     const isANY = (name === ANY);
     const table = element.subTable;
     if (!Object.hasOwnProperty.call(table, ANY)) {
@@ -59,10 +60,10 @@ export default class DFATable<T> {
     if (!isANY && !Object.hasOwnProperty.call(table, name)) {
       table[name] = {
         acceptance: undefined,
-        subTable: Object.create(table[ANY].subTable),
+        subTable: Object.create(table[ANY]!.subTable),
       };
     }
-    this._upsert(table[name], path, upsertHandler, captures);
+    this._upsert(table[name]!, path, upsertHandler, captures);
   }
 
   public upsert(pattern: (string | NamedCapture)[], upsertHandler: UpsertHandler<T>) {
