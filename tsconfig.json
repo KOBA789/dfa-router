@@ -1,14 +1,10 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "noImplicitAny": true,
-    "preserveConstEnums": true,
-    "target": "es2015",
+    "target": "es2018",
     "moduleResolution": "node",
-    "strictNullChecks": true,
+    "strict": true,
+    "esModuleInterop": true,
     "types": ["node"]
-  },
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }
